@@ -1,0 +1,34 @@
+Collecting albumentations
+  Downloading albumentations-1.1.0-py3-none-any.whl (102 kB)
+Collecting scikit-image>=0.16.1
+  Downloading scikit_image-0.17.2-cp36-cp36m-manylinux1_x86_64.whl (12.4 MB)
+Requirement already satisfied: PyYAML in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from albumentations) (5.4.1)
+Collecting opencv-python-headless>=4.1.1
+  Downloading opencv_python_headless-4.5.5.62-cp36-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (47.7 MB)
+Requirement already satisfied: numpy>=1.11.1 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from albumentations) (1.19.1)
+Collecting qudida>=0.0.4
+  Downloading qudida-0.0.4-py3-none-any.whl (3.5 kB)
+Requirement already satisfied: scipy in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from albumentations) (1.5.2)
+Requirement already satisfied: scikit-learn>=0.19.1 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from qudida>=0.0.4->albumentations) (0.24.2)
+Collecting typing-extensions
+  Downloading typing_extensions-4.0.1-py3-none-any.whl (22 kB)
+Collecting PyWavelets>=1.1.1
+  Downloading PyWavelets-1.1.1-cp36-cp36m-manylinux1_x86_64.whl (4.4 MB)
+Collecting tifffile>=2019.7.26
+  Downloading tifffile-2020.9.3-py3-none-any.whl (148 kB)
+Collecting networkx>=2.0
+  Downloading networkx-2.5.1-py3-none-any.whl (1.6 MB)
+Requirement already satisfied: pillow!=7.1.0,!=7.1.1,>=4.3.0 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from scikit-image>=0.16.1->albumentations) (8.4.0)
+Requirement already satisfied: imageio>=2.3.0 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from scikit-image>=0.16.1->albumentations) (2.13.5)
+Requirement already satisfied: matplotlib!=3.0.0,>=2.0.0 in /home/mohan/.local/lib/python3.6/site-packages (from scikit-image>=0.16.1->albumentations) (3.3.1)
+Requirement already satisfied: certifi>=2020.06.20 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (2020.6.20)
+Requirement already satisfied: kiwisolver>=1.0.1 in /home/mohan/.local/lib/python3.6/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (1.2.0)
+Requirement already satisfied: python-dateutil>=2.1 in /home/mohan/.local/lib/python3.6/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (2.8.1)
+Requirement already satisfied: pyparsing!=2.0.4,!=2.1.2,!=2.1.6,>=2.0.3 in /home/mohan/.local/lib/python3.6/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (2.4.7)
+Requirement already satisfied: cycler>=0.10 in /home/mohan/.local/lib/python3.6/site-packages (from matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (0.10.0)
+Requirement already satisfied: six in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from cycler>=0.10->matplotlib!=3.0.0,>=2.0.0->scikit-image>=0.16.1->albumentations) (1.15.0)
+Requirement already satisfied: decorator<5,>=4.3 in /home/mohan/.local/lib/python3.6/site-packages (from networkx>=2.0->scikit-image>=0.16.1->albumentations) (4.4.2)
+Requirement already satisfied: threadpoolctl>=2.0.0 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from scikit-learn>=0.19.1->qudida>=0.0.4->albumentations) (2.2.0)
+Requirement already satisfied: joblib>=0.11 in /home/mohan/anaconda2/envs/mltf115_2/lib/python3.6/site-packages (from scikit-learn>=0.19.1->qudida>=0.0.4->albumentations) (0.13.2)
+Installing collected packages: typing-extensions, tifffile, PyWavelets, opencv-python-headless, networkx, scikit-image, qudida, albumentations
+Successfully installed PyWavelets-1.1.1 albumentations-1.1.0 networkx-2.5.1 opencv-python-headless-4.5.5.62 qudida-0.0.4 scikit-image-0.17.2 tifffile-2020.9.3 typing-extensions-4.0.1
