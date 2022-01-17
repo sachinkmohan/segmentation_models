@@ -3,7 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 .idea/
-*ipynb
 
 # C extensions
 *.so
@@ -104,3 +103,11 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# pb files and .h5 files
+*.pb
+*.h5
+
+
+#ignoring data folder
+data/
