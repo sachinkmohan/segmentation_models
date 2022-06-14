@@ -11,8 +11,12 @@ def inference_video():
     input_name = sess.get_inputs()[0].name
     label_name = sess.get_outputs()[0].name
 
-    cap =cv2.VideoCapture('/home/mohan/git/backups/drive.mp4')
+    cap =cv2.VideoCapture('/home/mohan/git/backups/drive_1_min_more_cars.mp4')
+    prev_frame_time = 0
+    new_frame_time = 0
+
     while cap.isOpened():
+        new_frame_time = time.time()
         ret, frame = cap.read()
         image_resized2 = cv2.resize(frame, (480,320))
         img_inf = preprocess_input(image_resized2) ## adding the preprocessing step for the image -> Link found from -> https://github.com/qubvel/segmentation_models/issues/373#issuecomment-660081448
@@ -20,10 +24,14 @@ def inference_video():
 
         if ret:
             #Detections which returns a list
-            t0 = time.time()
+            #t0 = time.time()
             detections = sess.run([label_name], {input_name: final_img})
-            t1 = time.time()
-            print(t1-t0)
+            fps = 1/(new_frame_time - prev_frame_time)
+            prev_frame_time = new_frame_time
+            fps = int(fps)
+            print(fps)
+            #t1 = time.time()
+            #print(t1-t0)
             #List converted to the numpy array
             arr = np.asarray(detections)
             pred_image = 255*arr.squeeze()

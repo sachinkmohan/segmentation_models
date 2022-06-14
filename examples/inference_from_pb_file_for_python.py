@@ -15,8 +15,8 @@ BACKBONE = 'efficientnetb3'
 preprocess_input = sm.get_preprocessing(BACKBONE)
 
 tf_config = tf.ConfigProto()
-tf_config.gpu_options.allow_growth = True
-#tf_config.gpu_options.per_process_gpu_memory_fraction = 0.2
+#tf_config.gpu_options.allow_growth = True
+tf_config.gpu_options.per_process_gpu_memory_fraction = 0.02
 tf_sess = tf.Session(config=tf_config)
 #GRAPH_PB_PATH = './trained_models_local/saved_for_lab/tf_model_base_1502.pb'
 #GRAPH_PB_PATH = './converted_trt_graph/trt_graph_base_30.pb'
@@ -83,7 +83,11 @@ graph = tf.get_default_graph()
 def cam_video_inference():
     #cap = cv2.VideoCapture(0) # If you are using the camera
     cap = cv2.VideoCapture('/home/mohan/git/backups/drive.mp4')
+    prev_frame_time = 0
+    new_frame_time = 0
+    
     while cap.isOpened():
+        new_frame_time = time.time()
         ret, frame = cap.read()
         #frame2 = frame.reshape((300,480))
         image_resized2 = cv2.resize(frame, (480,320))
@@ -102,6 +106,10 @@ def cam_video_inference():
                 tf_input: img_inf[None, ...]
             })
             #cv2.imwrite('file5.jpeg', 255*predictions.squeeze())
+            fps = 1/(new_frame_time - prev_frame_time)
+            prev_frame_time = new_frame_time
+            fps = int(fps)
+            print(fps)
             pred_image = 255*predictions.squeeze()
 
             ##converts pred_image to CV_8UC1 format so that ColorMap can be applied on it
