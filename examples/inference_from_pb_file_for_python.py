@@ -21,7 +21,8 @@ tf_sess = tf.Session(config=tf_config)
 #GRAPH_PB_PATH = './trained_models_local/saved_for_lab/tf_model_base_1502.pb'
 #GRAPH_PB_PATH = './converted_trt_graph/trt_graph_base_30.pb'
 #GRAPH_PB_PATH = './converted_trt_graph/trt_graph_st_prg_1601_80p.pb'
-GRAPH_PB_PATH_FROZEN='./save-pb/frozen_model_100ep.pb'
+GRAPH_PB_PATH_FROZEN='./trt_pb_custom/trt_pb_unet_efnt_int8_ep30.pb'
+#GRAPH_PB_PATH_FROZEN='./save-pb/frozen_model_100ep.pb'
 #GRAPH_PB_PATH_TRT = './converted_trt_graph/trt_graph_ss_model.pb'
 
 with tf.Session() as sess:
@@ -118,7 +119,7 @@ def cam_video_inference():
             #Color map autumn is applied to the CV_8UC1 pred_image
             im_color = cv2.applyColorMap(u8, cv2.COLORMAP_AUTUMN)
             cv2.imshow('input image', image_resized2)
-            cv2.imshow('prediction mask',im_color)
+            cv2.imshow('TensorFlow Network 4',im_color)
             t1 = time.time()
             #print('Runtime: %f seconds' % (float(t1 - t0)))
             #cv2.waitKey(0)
