@@ -1,7 +1,7 @@
 **Changes in this Repository**
 
 - Added onnx inference. File can be found in the examples folder - `q_seg_onnx_inference.py`
-[link](./examples/q_seg_onnx_inference.py)
+- Added inference from h5 file. File can be found in the examples folder - `inference_from_h5.py`
 
 .. raw:: html
 
