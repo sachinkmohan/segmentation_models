@@ -4,6 +4,7 @@
 - Added inference from h5 file. File can be found in the examples folder - `inference_from_h5.py`
 - Onnx conversion code from pb file
 `python -m tf2onnx.convert --input ./save-pb/frozen_model_100ep.pb --inputs input_1:0 --outputs sigmoid/Sigmoid:0 --output seg_model_unet_100_ep_from_pb.onnx`
+- Added TF1 to TF-TRT conversion code to `binary_segmentation_inference_only.ipynb`
 .. raw:: html
 
     <p align="center">
